@@ -1,0 +1,488 @@
+--- > Categoria Produto < ---
+
+POST "/categoria/produto"  -> CADASTRAR CATEGORIA
+	# header
+	"Token"
+
+	# body
+	{
+        "nome" (string(45) | obrigatorio)
+    }
+	
+
+GET "/categoria/produto" -> RETORNA TODAS AS CATEGORIAS LINKADAS AO USUARIO
+	# header
+	"Token"
+    
+    # body
+	{}
+
+	# result
+	{
+		status (int)
+		message(string)
+		data [
+				{
+				id (int)
+				nome (string)
+			},
+			{
+				...
+			}
+		]
+	}
+
+
+GET "/categoria/produto/:id" -> RETORNA OS DADOS DE APENAS UMA "CATEGORIA_PRODUTO"
+	# header
+	"Token"
+    
+    # body
+	{}
+	
+	# result
+	{
+		status (int)
+		message(string)
+		data {
+			id (int)
+			nome (string)
+		}
+	}
+
+PUT "/categoria/produto/:id" -> EDITA UM UNICO DADO BASEADO NO ID DESSA "CATEGORIA_PRODUTO"
+	# header
+	"Token"
+
+    # body
+    {
+        "nome" (string(45))
+    }
+
+DELETE "/categoria/produto/:id" -> DELETA UM UNICO DADO DESSA CATEGORIA_PRODUTO
+	# header
+	"Token"
+
+	# body
+   	{}
+
+--------------------
+ --- > PRODUTO < ---
+
+POST "/produto" -> INSERE UM PRODUTO NO SISTEMA
+	# header
+	"Token"
+
+	# body
+    {
+		"nome" (string(100) | obrigatorio)
+		"condicao" (string(45))
+        "codigo_referencia" (string(45))
+        "estoque_maximo" (int)
+        "estoque_minimo" (int)
+        "estoque_atual" (int)
+        "preco" (float)
+        "observacao" (string(300))
+        "categoria_produto_id" (int | chave estrangeira)
+		"fornecedor_id" (int | chave estrangeira)
+		"marca_id" (int | chave estrangeira)
+    }
+
+GET "/produto" -> RETORNA TODOS OS PRODUTOS LINKADOS AO USUARIO
+	# header
+	"Token"
+
+	# body
+	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data [
+				{
+					id (int)
+					nome (string)
+					condicao (string)
+					codigo_referencia (string)
+					estoque_maximo (int)
+					estoque_minimo (int)
+					estoque_atual (int)
+					preco (float)
+					observacao (string)
+				},
+				{
+					...
+				}
+		]
+	}
+
+GET "/produto/:id" -> RETORNA PRODUTO POR ID
+	# header
+	"Token"
+
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data {
+			id (int)
+			nome (string)
+			condicao (string)
+			codigo_referencia (string)
+			estoque_maximo (int)
+			estoque_minimo (int)
+			estoque_atual (int)
+			preco (float)
+			observacao (string)
+		}
+	}
+
+PUT "/produto/:id" -> ATUALIZA UM PRODUTO BASEADO NO SEU ID
+	# header
+	"Token"
+
+	# body 
+  	{
+        "nome" (string(100) | obrigatorio)
+		"condicao" (string(45))
+        "codigo_referencia" (string(45))
+        "estoque_maximo" (int)
+        "estoque_minimo" (int)
+        "estoque_atual" (int)
+        "preco" (float)
+        "observacao" (string(300))
+        "categoria_produto_id" (int | chave estrangeira)
+		"fornecedor_id" (int | chave estrangeira)
+		"marca_id" (int | chave estrangeira)
+    }
+
+
+DELETE "/produto/:id" -> DELETA UM PRODUTO POR ID
+	# header
+	"Token"
+
+	# body
+  	{}
+
+----------------------
+--- > FORNECEDOR < ---
+
+POST "/fornecedor" -> CADASTRA UM FORNECEDOR
+	# header
+	"Token"
+
+	# body
+  	{
+        "pessoa_fisica" (booleano | obrigatorio)
+        "nome_fantasia" (string(100))
+		"razao_social" (string(100))
+        "cnpj" (string(18))
+		"nome" (string(100))
+		"cpf" (string(11))
+		"data_nascimento" (date | YYYY-MM-DD)
+        "telefone" (string(14))
+        "email" (string(100))
+		"nome_contato" (string(100))
+    }
+
+
+GET "/fornecedor" -> RETORNA TODOS OS FORNECEDORES DAQUELE USUARIO
+	# header
+	"Token"
+
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data [
+			{
+				pessoa_fisica (booleano)
+				nome_fantasia (string)
+				razao_social (string)
+				cnpj (string)
+				nome (string)
+				cpf (string)
+				data_nascimento (string | YYYY-MM-DD)
+				telefone (string)
+				email (string)
+				nome_contato (string)
+			},
+			{
+				...
+			}
+		]
+	}
+
+
+GET "/fornecedor/:id" -> RETORNA OS DADOS DE UM FORNECEDOR
+	# header
+	"Token"
+
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data {
+				pessoa_fisica (booleano)
+				nome_fantasia (string)
+				razao_social (string)
+				cnpj (string)
+				nome (string)
+				cpf (string)
+				data_nascimento (string | YYYY-MM-DD)
+				telefone (string)
+				email (string)
+				nome_contato (string)
+			}
+	}
+
+PUT "/fornecedor/:id" -> ATUALIZA OS DADOS DE UM FORNECEDOR
+	# header
+	"Token"
+
+	# body
+    {
+        "pessoa_fisica" (booleano | obrigatorio)
+        "nome_fantasia" (string(100))
+		"razao_social" (string(100))
+        "cnpj" (string(18))
+		"nome" (string(100))
+		"cpf" (string(11))
+		"data_nascimento" (date | YYYY-MM-DD)
+        "telefone" (string(14))
+        "email" (string(100))
+		"nome_contato" (string(100)) 
+    }
+
+DELETE "/fornecedor/:id" -> DELETA UM FORNECEDOR POR ID
+	# header
+	"Token"
+
+	# body
+  	{}
+
+
+--------------------
+--- > ENDERECO < ---
+POST "/fornecedor/endereco" -> CADASTRA UM ENDERECO DO FORNECEDOR
+	# header
+	"Token"
+
+	# body
+  	{
+        "cep" (string(9) | 12345-678)
+        "rua" (string(100))
+        "numero" (int)
+        "complemento" (string(100))
+        "bairro" (string(100))
+        "cidade" (string(100))
+        "uf" (string(2))
+		"observacao" (string(200))
+        "fornecedor_id" (int | chave estrangeira)
+    }
+
+
+GET "/fornecedor/endereco/:fornecedor_id" -> RECEBE TODOS OS ENDEREÇOS DAQUELE FORNECEDOR
+	# header
+	"Token"
+
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data [
+				{
+				cep (string)
+				rua (string)
+				numero (int)
+				complemento (string)
+				bairro (string)
+				cidade (string)
+				uf (string)
+				observacao (string)
+				fornecedor_id (int | chave estrangeira)
+			}
+		]
+	}
+
+
+
+PUT "/fornecedor/endereco/:id" -> ATUALIZA OS DADOS DE UM ENDEREÇO
+	# header
+	"Token"
+
+	# body
+    {
+'       "cep" (string(9) | 12345-678)
+        "rua" (string(100))
+        "numero" (int)
+        "complemento" (string(100))
+        "bairro" (string(100))
+        "cidade" (string(100))
+        "uf" (string(2))
+		"observacao" (string(200))
+        "fornecedor_id" (int | chave estrangeira)
+    }
+
+DELETE "/endereco/:id" -> DELETA UM ENDEREÇO POR ID
+	# header
+	"Token"
+
+	# body
+  	{}
+
+-----------------
+--- > MARCA < ---
+POST "/marca" -> CADASTRA UMA NOVA MARCA
+	# header
+	"Token"
+
+	# body
+  	{
+       "nome" (string(45) | obrigatorio)
+    }
+
+
+GET "/marca" -> RECEBE TODAS AS MARCAS DAQUELE USUARIO
+	# header
+	"Token"
+	
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data [
+			{
+				id (int)
+				nome (string)
+			},
+			{
+				...
+			}
+		]
+	}
+
+
+PUT "/marca/:id" -> ATUALIZA OS DADOS DE UMA MARCA
+	# header
+	"Token"
+
+	# body
+    {
+'      "nome" (string(45) | obrigatorio)
+    }
+
+DELETE "/marca/:id" -> DELETA UMA MARCA PELO ID
+	# header
+	"Token"
+	
+	# body
+  	{}
+
+
+-------------------
+--- > ESTOQUE < ---
+
+POST "/estoque" -> CADASTRA UM NOVO ESTOQUE
+	# header
+	"Token"
+
+	# body
+  	{
+       "data" (string | YYYY-MM-DD | obrigatorio)
+	   "quantidade" (integer | obrigatorio)
+	   "preco_total" (float | obrigatorio)
+	   "entrada" (booleano | obrigatorio)
+	   "anexo" (string(100))
+	   "produto_id" (int | chave estrangeira)
+    }
+
+GET "/estoque/:id" -> RETORNA OS DADOS DE UM PRODUTO
+	# header					
+	"Token"							
+	
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data {
+				id (int)
+				data (string)
+				quantidade (int)
+				preco_total (float)
+				entrada (booleano)
+				anexo(string)
+				produto_id (int)
+			}
+	}
+
+
+GET "/estoque?produto=(int)" -> RECEBE TODOS OS ESTOQUES DAQUELE USUARIO. HÁ UM OPCIONAL, CASO INSIRA O ID DE UM PRODUTO, RETORNA OS ESTOQUES DAQUELE PRODUTO APENAS
+	# header					Obs: Opcionais
+	"Token"							produto=(int)
+	
+	# body
+  	{}
+
+	# result
+	{
+		status (int)
+		message (string)
+		data [
+			{
+				id (int)
+				data (string)
+				quantidade (int)
+				preco_total (float)
+				entrada (booleano)
+				anexo(string)
+				produto_id (int)
+			},
+			{
+				...
+			}
+		]
+	}
+
+
+PUT "/produto/:id" -> ATUALIZA OS DADOS DE UM PRODUTO
+	# header
+	"Token"
+
+	# body
+    {
+'      "data" (string | YYYY-MM-DD)
+	   "quantidade" (integer)
+	   "preco_total" (float)
+	   "entrada" (booleano)
+	   "anexo" (string(100))
+	   "produto_id" (int | chave estrangeira)
+    }
+
+DELETE "/produto/:id" -> DELETA UM PRODUTO PELO ID
+	# header
+	"Token"
+	
+	# body
+  	{}
+
+

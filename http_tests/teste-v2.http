@@ -1,0 +1,389 @@
+POST http://localhost:3000/usuario/
+Content-Type: application/json
+
+{  
+    "nome": "cpf pessoa",
+    "email": "email2@gmail.com",
+    "senha": "1234567890",
+    "categoria_conta": "cpf",
+    "nivel_acesso": "normal",
+    "cpf": "12345678901"
+}
+
+###
+emails cadastrados:
+ "email": "birdtechsolutionss@gmail.com",
+ "senha": "1234567890",
+
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{ 
+  "email": "email2@gmail.com", 
+  "senha": "1234567890"
+}
+
+###
+POST http://localhost:3000/vendas
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZjY4ZDQxMDEtM2NmZS00N2RiLTkyMmQtNmQzNzFmYmZiYWEwIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzIwMTgxNjc3LCJleHAiOjE3MjA0NDA4Nzd9.JrjcFR-OphNORfal-FcgNRzRKWH50woalKqSzkMVkow
+
+
+{
+  "tipo_pagamento": "vista+prazo",
+  "data": "2024-04-03",
+  "data_pagamento": "2022-07-31",
+  "entregue": false,
+  "valor_entrada": 5.43,
+  "parcelas": 8,
+  "valor_parcelas": 15,
+  "preco_total": 300,
+  "observacao": "tesxto",
+    "produtos": [
+      {"preco_venda": 200,
+      "quantidade": 10,
+      "produto_id": 4},
+      {"preco_venda": 200,
+      "quantidade": 15,
+      "produto_id": 2}
+    ]
+}
+
+###
+POST http://localhost:3000/produto
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZjY4ZDQxMDEtM2NmZS00N2RiLTkyMmQtNmQzNzFmYmZiYWEwIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzIwMTgxNjc3LCJleHAiOjE3MjA0NDA4Nzd9.JrjcFR-OphNORfal-FcgNRzRKWH50woalKqSzkMVkow
+
+{
+    "nome": "marks",
+    "condicao": "prod123",
+    "codigo_referencia": "xxasdx",
+    "preco": 135.50,
+    "estoque_atual": 99,
+    "estoque_minimo": 100,
+    "estoque_maximo": 1000,
+    "observacao": "emas branco",
+    "margem_lucro": 50.5,
+    "valor_custo": 20
+}
+
+###
+GET http://localhost:3000/vendas
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMDk3Y2Q4ODEtODU0OS00NGE0LTgxNjAtNzA2OTNkOTQ2ODA1IiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE4MzExNTUxLCJleHAiOjE3MTg1NzA3NTF9.CTSZYKKtf8Thv0eQgyd9N18szSBGhLBEyEMBI6qYKRI
+
+{
+
+}
+
+###
+GET http://localhost:3000/vendas/unidadesvendidasporperiodo
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZjY4ZDQxMDEtM2NmZS00N2RiLTkyMmQtNmQzNzFmYmZiYWEwIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzIwMTgxNjc3LCJleHAiOjE3MjA0NDA4Nzd9.JrjcFR-OphNORfal-FcgNRzRKWH50woalKqSzkMVkow
+
+
+{
+  
+}
+
+
+
+### 
+GET http://localhost:3000/produto/abaixoDoEstoque
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+###
+GET http://localhost:3000/produto/totalEmEstoque
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+###
+
+### 
+GET http://localhost:3000/produto/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+{
+    
+}
+
+
+###
+DELETE http://localhost:3000/produto/3
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZjY4ZDQxMDEtM2NmZS00N2RiLTkyMmQtNmQzNzFmYmZiYWEwIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzIwMTgxNjc3LCJleHAiOjE3MjA0NDA4Nzd9.JrjcFR-OphNORfal-FcgNRzRKWH50woalKqSzkMVkow
+
+{
+    
+}
+
+###
+PUT http://localhost:3000/produto/3/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+{
+    "nome": "bbb",
+    "condicao": "novo",
+    "codigo_referencia": "a23",
+    "estoque_maximo": 10,
+    "estoque_minimo": 0,
+    "estoque_atual": 30,
+    "preco": 20,
+    "observacao": "aaa",
+    "categoria_produto_id": null
+}
+
+###
+POST http://localhost:3000/categoria/produto/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+
+{
+    "nome": "categoria produto2"
+}
+
+###
+GET http://localhost:3000/categoria/produto/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+{
+    
+}
+
+###
+PUT http://localhost:3000/categoria/produto/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+{
+    "nome": "atualizado"
+}
+
+###
+
+DELETE http://localhost:3000/categoria/produto/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+{
+
+}
+
+###
+
+POST http://localhost:3000/fornecedor
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+{
+    "pessoa_fisica": true,
+    "nome": "Francisco",
+    "cpf": "12345678901",
+    "telefone": "9988776655",
+    "nome_contato": "max",
+    "data_nascimento": "2000-10-10",
+    "car": 5
+
+}
+
+###
+GET http://localhost:3000/fornecedor/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+{
+  
+
+}
+
+###
+PUT http://localhost:3000/fornecedor/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+{
+  
+    "cnpj": "12345"
+}
+
+###
+DELETE http://localhost:3000/fornecedor/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+{
+  
+    "cnpj": "12345"
+}
+
+###
+POST http://localhost:3000/fornecedor/endereco
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+{
+  
+    "cep": "12345-678",
+    "rua": "rua 2",
+    "numero": 522,
+    "complemento": "51 asd",
+    "bairro": "maxtio",
+    "cidade": "aquela la",
+    "uf": "as",
+    "fornecedor_id": 1
+}
+
+###
+
+GET http://localhost:3000/fornecedor/endereco/1
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+
+{
+  
+    
+}
+
+###
+###
+
+PUT http://localhost:3000/fornecedor/endereco/1
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+
+{
+  "rua": "rua dez"
+    
+}
+
+###
+POST http://localhost:3000/marca
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+
+{
+  "nome": "rua dez"
+    
+}
+
+###
+GET http://localhost:3000/marca/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+
+{
+  "nome": "rua dez"
+    
+}
+
+###
+DELETE http://localhost:3000/marca/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTI4OTc3ODIsImV4cCI6MTcxMzE1Njk4Mn0.b1B9BEvWwBjuLxzOd9Qw9rRVFxgMKsw5arePDec53Ko
+
+
+{
+  "nome": "rua dez"
+    
+}
+
+###
+GET http://localhost:3000/estoque/entradaUltimosSeteDias
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+###
+GET http://localhost:3000/estoque/totalNaoRecebido
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+
+###
+GET http://localhost:3000/despesa/parcelasValores
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+###
+POST http://localhost:3000/estoque
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZjY4ZDQxMDEtM2NmZS00N2RiLTkyMmQtNmQzNzFmYmZiYWEwIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzIwMTgxNjc3LCJleHAiOjE3MjA0NDA4Nzd9.JrjcFR-OphNORfal-FcgNRzRKWH50woalKqSzkMVkow
+
+{
+  "tipo_pagamento": "vista+prazo",
+  "data": "2024-06-15",
+  "data_pagamento": "2024-09-14",
+  "valor_entrada": 5.43,
+  "parcelas": 5,
+  "valor_parcelas": 15,
+  "descricao": "asdasdsada",
+  "nota_fiscal": "nova_fiscal",
+  "quantidade": 90,
+  "preco_total": 300,
+  "entrada": true,
+  "produto_id": 1,
+  "fornecedor_id": null,
+  "categoria_despesa_id": 2,
+  "recebido": true
+}
+
+###
+POST http://localhost:3000/categoria/despesa
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMTc0NTAwODEtNDVjZS00Njg0LWIzZDktZmMzZThjM2FlZWJjIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE5NTM0MjU0LCJleHAiOjE3MTk3OTM0NTR9.pvTYz-civGOvlZ-dDdk2YHYRpc8RrZyFzxhrAUe_3Co
+
+{
+    "nome": "vest"
+}
+###
+GET http://localhost:3000/despesa/relatoriocategoria
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMTc0NTAwODEtNDVjZS00Njg0LWIzZDktZmMzZThjM2FlZWJjIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE5NTM0MjU0LCJleHAiOjE3MTk3OTM0NTR9.pvTYz-civGOvlZ-dDdk2YHYRpc8RrZyFzxhrAUe_3Co
+
+###
+DELETE http://localhost:3000/estoque/2
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZjY4ZDQxMDEtM2NmZS00N2RiLTkyMmQtNmQzNzFmYmZiYWEwIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzIwMTgxNjc3LCJleHAiOjE3MjA0NDA4Nzd9.JrjcFR-OphNORfal-FcgNRzRKWH50woalKqSzkMVkow
+
+
+###
+DELETE http://localhost:3000/estoque/4/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTM0NzM0OTMsImV4cCI6MTcxMzczMjY5M30.aciBQNIeRf0WLHAP0BaSdQxDY4yPuIXN6pClhR31cI0
+
+
+###
+PUT http://localhost:3000/estoque/7/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYjI3ZjI5MTYtZWExYi00NWMxLTg1ZDUtYmEzNTI3ZTBiMTI5IiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE0MDMzNjI2LCJleHAiOjE3MTQyOTI4MjZ9.G5A7EufELcHxSyVh4-cfdmjfxWAnLigaaTeK1SLIVrE
+
+
+{
+  "data": "2022-05-01",
+  "quantidade": 7,
+  "preco_total": 17,
+  "entrada": false,
+  "produto_id": 3
+}
+
+
+###
+GET http://localhost:3000/estoque
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiZWRiNjUxNTktOGUwOS00ZjExLWI1NTktZjk4ODcwNWIwZGVhIiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE3NDM2MzUxLCJleHAiOjE3MTc2OTU1NTF9.51d2YchyORYEi25MxtVVWgbFBe3W6VIb1_zFioh8HcM
+
+###
+
+
+email2
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYjI3ZjI5MTYtZWExYi00NWMxLTg1ZDUtYmEzNTI3ZTBiMTI5IiwiZW1haWwiOiJlbWFpbDJAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzE0MDMzNjI2LCJleHAiOjE3MTQyOTI4MjZ9.G5A7EufELcHxSyVh4-cfdmjfxWAnLigaaTeK1SLIVrE
+
+email
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiODg3YTI1ZmItZDA1My00OTM3LWJkODctZjljOGZkNzNlMGIzIiwiZW1haWwiOiJlbWFpbEBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDUEYiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MTM0NzM0OTMsImV4cCI6MTcxMzczMjY5M30.aciBQNIeRf0WLHAP0BaSdQxDY4yPuIXN6pClhR31cI0
+

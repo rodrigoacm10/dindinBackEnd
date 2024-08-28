@@ -1,0 +1,23 @@
+# Ignorar arquivos de build e dependências
+node_modules/
+dist/
+build/
+*.log
+
+# Arquivos de configuração
+.env
+.env.local
+.env.*.local
+
+# Arquivos de compilação TypeScript
+*.js
+*.js.map
+
+# Arquivos gerados pelo editor
+.vscode/
+.idea/
+
+uploads/*
+
+# Meus testes HTTP
+my_tests/

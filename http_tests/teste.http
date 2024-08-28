@@ -1,0 +1,375 @@
+GET http://localhost:3000
+
+
+###
+POST http://localhost:3000/resetarsenha
+Content-Type: application/json
+
+{ 
+  "email": "email12345@gmail.com"
+}
+
+###
+POST http://localhost:3000/resetarsenha/alterarsenha
+Content-Type: application/json
+
+{ 
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMDNkZmEyZjgtMWI2ZS00ODk5LWFjOGYtNzA3NjBiZGU2MmE4IiwiZW1haWwiOiJlbWFpbDEyMzQ1QGdtYWlsLmNvbSIsImlhdCI6MTcwNTIwMTI0NCwiZXhwIjoxNzA1MjA4NDQ0fQ.vtu3_K1BVN7i7vsBQydzH3yMTZwphL7IhK5Ou2q0iF0",
+    "senha": "123456789"
+}
+
+###
+POST http://localhost:3000/usuario/
+Content-Type: application/json
+
+{ 
+    "nome": "cpf pessoa",
+    "email": "birdtechsolutionss@gmail.com",
+    "senha": "1234567890",
+    "categoria_conta": "cpf",
+    "nivel_acesso": "normal",
+    "alguma_coisa": "teste", //campo extra. Faz nada se enviado campos a mais.
+    "cpf": "12345678901"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{ 
+  //"email": "email12345@gmail.com", 
+  "email": "birdtechsolutionss@gmail.com", 
+  "senha": "1234567890"
+}
+
+###
+
+PUT http://localhost:3000/usuario
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{ 
+    "nome": "cnpj admin",
+    "teste": "mua"
+    //"cnpj": "12345678901231"
+
+    //"nivel_acesso": "ADMIN"
+}
+###
+DELETE http://localhost:3000/usuario
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNGNhMjY4YjktZjg2Zi00OGMxLWIyMDYtMmE2YTY4MDc3NDc1IiwiZW1haWwiOiJlbWFpbDEyM0BnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJNRUkiLCJuaXZlbF9hY2Vzc28iOiJOT1JNQUwiLCJpYXQiOjE3MDM2MDE1NDQsImV4cCI6MTcwMzg2MDc0NH0.pEKTRfWXjvVMyBVWCFhHEWUppE9Snd9e9pAtD-WK0Iw
+
+{ 
+    "nome": "meu nome",
+    "teste": "mua",
+    "nivel_acesso": "ADMIN"
+}
+
+###
+GET http://localhost:3000/usuario
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNGY3ZWFjNjctNTZhYy00NGY0LTk3ZTgtOTM0YmY0ZmE5Y2FjIiwiZW1haWwiOiJlbWFpbDEyM0BnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJNRUkiLCJuaXZlbF9hY2Vzc28iOiJBRE1JTiIsImlhdCI6MTcwMzYwMjk0MSwiZXhwIjoxNzAzODYyMTQxfQ.gcwRyFUInJVz4nd1zMnqGWvs4dvSJGjFo4WreE4zKNM
+
+
+###
+POST http://localhost:3000/faq
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMGJiODE1NTUtMmU1Ny00MTZmLTg2ZWEtN2I2MDMwZDRmZjA1IiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiQURNSU4iLCJpYXQiOjE3MDM2MjM5NDAsImV4cCI6MTcwMzg4MzE0MH0.eNgGzay6dQU3yGdlNAqy4oOkE2RUwM0YkX8SdxB6sR8
+//Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOWQ1NTc1ZDUtM2FhMy00NDgzLThjYjAtNGU2MWQ2ZDYzYjRmIiwiZW1haWwiOiJlbWFpbDEyMzRAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiTUVJIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjI1NTMwLCJleHAiOjE3MDM4ODQ3MzB9.oX-BSbgBPI2Mawkr6KXmZ8WObl7cazOutT4ib0hIUdw
+
+{
+    "pergunta": "perguntei3",
+    "resposta": "respondi3"
+}
+
+###
+DELETE http://localhost:3000/faq/4
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMGJiODE1NTUtMmU1Ny00MTZmLTg2ZWEtN2I2MDMwZDRmZjA1IiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiQURNSU4iLCJpYXQiOjE3MDM2MjM5NDAsImV4cCI6MTcwMzg4MzE0MH0.eNgGzay6dQU3yGdlNAqy4oOkE2RUwM0YkX8SdxB6sR8
+
+{
+    "pergunta": "perguntei3",
+    "resposta": "respondi3"
+}
+
+###
+GET http://localhost:3000/faq/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYzFmOTI5MzMtZjI1Mi00NDcwLWJiZDEtODkzYzE4ZDhhNjQ0IiwiZW1haWwiOiJlbWFpbDEyMzRAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0ODI2NTM1LCJleHAiOjE3MDUwODU3MzV9.sTU1Khg4bkN1AqxFvQrvlPl-L6ozOMUJNp0A9yFXRPc
+
+###
+PUT http://localhost:3000/faq/3
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMGJiODE1NTUtMmU1Ny00MTZmLTg2ZWEtN2I2MDMwZDRmZjA1IiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiQURNSU4iLCJpYXQiOjE3MDM2MjM5NDAsImV4cCI6MTcwMzg4MzE0MH0.eNgGzay6dQU3yGdlNAqy4oOkE2RUwM0YkX8SdxB6sR8
+
+{
+    "pergunta": "ma2x",
+    "resposta": "min"
+}
+
+
+###
+POST http://localhost:3000/receita
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMGFkNTE3ZjMtYzEzZi00N2E0LWIwZTYtMDQyYWM1MGJjYjE5IiwiZW1haWwiOiJlbWFpbDEyMzQ1QGdtYWlsLmNvbSIsImNhdGVnb3JpYV9jb250YSI6IkNQRiIsIm5pdmVsX2FjZXNzbyI6Ik5PUk1BTCIsImlhdCI6MTcwNDg1MzQ0MywiZXhwIjoxNzA1MTEyNjQzfQ.zFmr0RAI-e7VIWbtMHb-pl32GSKzVzQ9sE-Je3BlXrU
+
+{ 
+  	"descricao": "eeee",
+  	"valor": 888,
+  	"data": "03/01/2021",
+    "anexo": "",
+    "efetuado": "sim",
+    "categoria_receita_id": null,
+    "servico_id": null,
+    "cliente_id": null,
+    "produto_id": 0
+}
+###
+POST http://localhost:3000/cliente/
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYjcwZGFmMmQtNGM0ZC00OTFkLWEzZTQtYWJlYjNhYzFhMDY2IiwiZW1haWwiOiJlbWFpbDEyMzRAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0ODMwMTQyLCJleHAiOjE3MDUwODkzNDJ9.DRaElCFj98yhfOYiP304s9Q5SWZxYzsDdd33DuORVVg
+
+{
+    "nome": "abcd",
+    "telefone": 1234567,
+    "email": "asda@gmail.com",
+    "whatsapp": true
+}
+###
+PUT http://localhost:3000/cliente/2
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYjcwZGFmMmQtNGM0ZC00OTFkLWEzZTQtYWJlYjNhYzFhMDY2IiwiZW1haWwiOiJlbWFpbDEyMzRAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0ODMwMTQyLCJleHAiOjE3MDUwODkzNDJ9.DRaElCFj98yhfOYiP304s9Q5SWZxYzsDdd33DuORVVg
+
+{
+    "nome": "aaaa",
+    "telefone": "undefined",
+    "email": "undefined@gmail.com",
+    "whatsapp": false
+}
+
+
+###
+GET http://localhost:3000/receita/relatorio7dias?inicio=2020-12-25&fim=2021-01-03
+//?inicio=2020-08-06&fim=2020-12-20
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiMGFkNTE3ZjMtYzEzZi00N2E0LWIwZTYtMDQyYWM1MGJjYjE5IiwiZW1haWwiOiJlbWFpbDEyMzQ1QGdtYWlsLmNvbSIsImNhdGVnb3JpYV9jb250YSI6IkNQRiIsIm5pdmVsX2FjZXNzbyI6Ik5PUk1BTCIsImlhdCI6MTcwNDg1MzQ0MywiZXhwIjoxNzA1MTEyNjQzfQ.zFmr0RAI-e7VIWbtMHb-pl32GSKzVzQ9sE-Je3BlXrU
+
+
+###
+GET http://localhost:3000/receita/relatoriomes?inicio=2020-06-15&fim=2021-12-05&efetuado=sim
+//?inicio=2020-08-06&fim=2020-12-20
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYjcwZGFmMmQtNGM0ZC00OTFkLWEzZTQtYWJlYjNhYzFhMDY2IiwiZW1haWwiOiJlbWFpbDEyMzRAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0ODMwMTQyLCJleHAiOjE3MDUwODkzNDJ9.DRaElCFj98yhfOYiP304s9Q5SWZxYzsDdd33DuORVVg
+
+
+//novo token -> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiYjcwZGFmMmQtNGM0ZC00OTFkLWEzZTQtYWJlYjNhYzFhMDY2IiwiZW1haWwiOiJlbWFpbDEyMzRAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ1BGIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0ODMwMTQyLCJleHAiOjE3MDUwODkzNDJ9.DRaElCFj98yhfOYiP304s9Q5SWZxYzsDdd33DuORVVg
+
+###
+GET http://localhost:3000/export?formato=XLS
+//?inicio=2020-08-06&fim=2020-12-20
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0Mzk2NDQzLCJleHAiOjE3MDQ2NTU2NDN9.sN5w9CqtXsz0w9uI2oK74vcLCiTCvSrzWfTZZax7GxM
+
+
+###
+GET http://localhost:3000/despesa?inicio=2020-12-29
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0MjE0NTI1LCJleHAiOjE3MDQ0NzM3MjV9.2GDD78aYoBtGF98jIqyCWFQ4P6WWUPalWYC42Sw1c38
+
+###
+GET http://localhost:3000/receita/2/2
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+###
+
+PUT http://localhost:3000/receita/5
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{ 
+   // "nome": "asdaqweqwe",
+  	"descricao": "abcd",
+  	"valor": 85,
+    "data": "20/12/2020",
+    "anexo": "endereco",
+    "efetuado": "nao9",
+    "cliente_id": 3,
+    "categoria_receita_id": 3,
+    "produto_id": 3,
+    "servico_id": 3
+}
+
+###
+GET http://localhost:3000/receita
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+# {
+#    "efetuado": true
+# }
+
+###
+GET http://localhost:3000/receita/9/0?efetuado=nao
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+
+###
+POST http://localhost:3000/despesa
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{ 
+  	"descricao": "exx",
+  	"valor": 33,
+  	"data": "28/12/2021",
+    "anexo": "",
+    "efetuado": "true",
+    "categoria_despesa_id": "",
+    "servico_id": "",
+    "cliente_id": "",
+    "produto_id": ""
+}
+
+###
+GET http://localhost:3000/receitaedespesa
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+# {
+#     "efetuado": "false"
+# }
+
+###
+POST http://localhost:3000/servico
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "test"
+}
+
+###
+DELETE http://localhost:3000/servico/2
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "33"
+}
+
+###
+POST http://localhost:3000/categoria/receita
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "test"
+}
+
+###
+DELETE http://localhost:3000/categoria/receita/1
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "aaaatest"
+}
+
+###
+PUT http://localhost:3000/categoria/despesa/2
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "seu patinhas"
+}
+
+###
+POST http://localhost:3000/produto
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "aaaa"
+}
+
+###
+
+POST http://localhost:3000/cliente/
+Content-Type: application/json
+//token valido -> usuario email = email12345. tipo CPF e usuario NORMAL
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzAzNjQyMjI2LCJleHAiOjE3MDM5MDE0MjZ9.IfqBZoB9T693RiCNtT2o8CWKvBHrUL4wyDYgHAwQzyc
+
+{
+    "nome": "asd",
+    "telefone": "11"
+}
+###
+GET http://localhost:3000/receitaedespesa/valores?efetuado=sim&inicio=2020-12-23
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0MjE0NTI1LCJleHAiOjE3MDQ0NzM3MjV9.2GDD78aYoBtGF98jIqyCWFQ4P6WWUPalWYC42Sw1c38
+
+
+###
+POST http://localhost:3000/receita/
+Content-Type: application/json
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0MjE0NTI1LCJleHAiOjE3MDQ0NzM3MjV9.2GDD78aYoBtGF98jIqyCWFQ4P6WWUPalWYC42Sw1c38
+
+//Token unico, adicionado apenas 1 receita
+//Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiNzBjNjg2ZGMtM2EzYy00ODc4LTk4OGEtNDQzYTY0NGZiZTdmIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OTBAZ21haWwuY29tIiwiY2F0ZWdvcmlhX2NvbnRhIjoiQ05QSiIsIm5pdmVsX2FjZXNzbyI6Ik5PUk1BTCIsImlhdCI6MTcwNDIzMTU4NywiZXhwIjoxNzA0NDkwNzg3fQ.RzCP5mTEMqD9_W-3BeuNz_EdtrHBxpEKEE-_ZJWFkm8
+
+#  { 
+#    	"descricao": "exx",
+#    	"valor": 33,
+#    	"data": "22/12/2020",
+#     "anexo": "",
+#      "efetuado": "sim",
+#      "categoria_despesa_id": "",
+#      "servico_id": "",
+#      "cliente_id": "",
+#      "produto_id": ""
+#  }
+
+###
+POST http://localhost:3000/files/upload
+Content-Type: multipart/form-data
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvX2lkIjoiOTQ1MjQ4Y2EtYTdiNS00MjQxLTlhYWUtYzk0OThiZGE1OTcxIiwiZW1haWwiOiJlbWFpbDEyMzQ1Njc4OUBnbWFpbC5jb20iLCJjYXRlZ29yaWFfY29udGEiOiJDTlBKIiwibml2ZWxfYWNlc3NvIjoiTk9STUFMIiwiaWF0IjoxNzA0MjE0NTI1LCJleHAiOjE3MDQ0NzM3MjV9.2GDD78aYoBtGF98jIqyCWFQ4P6WWUPalWYC42Sw1c38
+
+< C:\Users\Eleide\Downloads\WhatsApp Image 2023-12-27 at 14.07.23.jpeg
+
+
+# POST https://api.example.com/user/upload
+# Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+# ------WebKitFormBoundary7MA4YWxkTrZu0gW
+# Content-Disposition: form-data; name="text"
+
+# title
+# ------WebKitFormBoundary7MA4YWxkTrZu0gW
+# Content-Disposition: form-data; name="image"; filename="1.png"
+# Content-Type: image/png
+
+# < ./1.png
+# ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+

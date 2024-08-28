@@ -1,0 +1,67 @@
+curl -X POST http://localhost:3000/login \
+-H "Content-Type: application/json" \                                                                                            -d '{                                                                                                                              "nome": "Maria Silva",
+  "email": "teste@gmail.com",
+  "senha": "123456"
+}'
+
+# Create
+###
+POST http://localhost:3000/usuario/
+Content-Type: application/json
+{ 
+    "nome": "cpf pessoa",
+    "email": "birdtechsolutionss@gmail.com",
+    "senha": "1234567890",
+    "categoria_conta": "cpf",
+    "nivel_acesso": "normal",
+    "cpf": "12345678901"
+}
+
+# Login
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+{ 
+    "nome": "cpf pessoa",
+    "email": "birdtechsolutionss@gmail.com",
+    "senha": "1234567890",
+    "categoria_conta": "cpf",
+    "nivel_acesso": "normal",
+    "alguma_coisa": "teste", //campo extra. Faz nada se enviado campos a mais.
+    "cpf": "12345678901"
+}
+
+
+# Read
+###
+GET http://localhost:3000/usuario
+Content-Type: application/json
+Token: #token do usuario aqui, pegar na requisição do login
+
+# Update
+PUT http://localhost:3000/usuario
+Content-Type: application/json
+Token: #token do usuario aqui, pegar na requisição do login
+
+{ 
+    "nome": "cnpj admin",
+    "teste": "mua"
+    //"cnpj": "12345678901231"
+
+    //"nivel_acesso": "ADMIN"
+}
+
+
+# Delete
+###
+DELETE http://localhost:3000/usuario
+Content-Type: application/json
+Token: #token do usuario aqui, pegar na requisição do login
+
+{ 
+    "nome": "meu nome",
+    "teste": "mua",
+    "nivel_acesso": "ADMIN"
+}
+
+

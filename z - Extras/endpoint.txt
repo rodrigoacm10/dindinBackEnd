@@ -1,0 +1,674 @@
+endpoint - finalizar
+
+ --- > USUARIO < ---
+GET "/usuario" -> retorna os dados do usuario
+	CABEÇALHO
+	"Token"
+	CORPO
+	{}
+	
+	RETORNO
+	status: 
+	message:
+	data: {} (dados do usuario encontrado)
+
+
+POST "/usuario" -> cadastra um usuario
+	CABEÇALHO
+	{}
+	CORPO
+   	"nome"
+    "sobrenome"
+    "email"
+    "senha"
+    "nome_empresa" -> permite vazio
+    "cpf_cnpj"
+	
+	RETORNO
+	status:
+	message:
+	data: {} (vazio)
+
+
+PUT "/usuario" -> editar usuario
+	CABEÇALHO
+	"Token"
+	CORPO
+   	"nome" -> opcional
+    "sobrenome" -> opcional
+    "email" -> opcional
+    "senha" -> opcional
+    "nome_empresa" -> opcional
+    "cpf_cnpj" -> opcional
+
+	RETORNO:
+    status:
+	message:
+	data: {} (vazio)
+
+
+DELETE "/usuario" -> deletar usuario (Existe e provavelmente vai ser utilizada apenas 1x... Quando ele desejar encerrar a conta xD)
+	CABEÇALHO
+	"Token"
+	CORPO
+   	{}
+
+	RETORNO:
+    status:
+	message:
+	data: {} (vazio)
+
+
+-------------------
+ --- > LOGIN < ---
+POST "/login" -> Autentica o usuario no servidor
+	CABEÇALHO
+	{}
+	CORPO
+   	"email"
+	"senha"
+
+	RETORNO:
+    status:
+	message:
+	data: {
+			token: (Retorna o token de acesso, em caso de sucesso para ser usado nas futuras requisições)
+		} 
+
+-------------------
+ --- > RECEITA < ---
+POST "/receita" -> Cadastra uma receita
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+  	"descricao"
+  	"valor"
+  	"data" -> apenas data, Nao possui horario
+	"produto" 
+	"quantidade"
+	"categoria_receita_id" -> opcional, pode ser vazio
+
+	RETORNO
+	status:
+	message:
+	data: {} (vazio)
+
+GET "/receita" ->recebe todas as receitas daquele usuario
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+			{
+				"id":
+  				"nome":
+  				"descricao":
+  				"valor":
+  				"data":
+  				"produto":
+  				"quantidade":
+			}
+		]
+
+GET "/receita/:id" -> recebe os dados de uma receita
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+				"id":
+  				"nome":
+  				"descricao":
+  				"valor":
+  				"data":
+  				"produto":
+  				"quantidade":
+		}
+
+PUT "/receita/:id" -> atualiza os dados de uma receita
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+  	"descricao"
+  	"valor"
+  	"data" -> apenas data
+  	"produto"
+  	"quantidade"
+	"categoria_receita_id" -> opcional, caso nao possua categoria
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+DELETE "/receita/:id" -> deleta uma receita pelo ID
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+GET "/receita/:quantidade/:pagina" -> paginacao. Pegar QUANTIDADE itens começando do item PAGINA*QUANTIDADE (obs: pagina deve comecar em 0)
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+			{
+				"id":
+				"nome":
+				"descricao":
+				"valor":
+				"data":
+				"produto":
+				"quantidade":
+			}
+		]
+	
+ --- > DESPESA < ---
+POST "/despesa" -> Cadastra uma despesa
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+  	"descricao"
+  	"valor"
+  	"data" -> apenas data, Nao possui horario
+	"produto" 
+	"quantidade"
+	"categoria_despesa_id" -> opcional, pode ser vazio
+
+	RETORNO
+	status:
+	message:
+	data: {} (vazio)
+
+GET "/despesa" ->recebe todas as despesas daquele usuario
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+			{
+				"id":
+  				"nome":
+  				"descricao":
+  				"valor":
+  				"data":
+  				"produto":
+  				"quantidade":
+			}
+		]
+
+GET "/despesa/:id" -> recebe os dados de uma despesa
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+				"id":
+  				"nome":
+  				"descricao":
+  				"valor":
+  				"data":
+  				"produto":
+  				"quantidade":
+		}
+
+PUT "/despesa/:id" -> atualiza os dados de uma despesa
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+  	"descricao"
+  	"valor"
+  	"data" -> apenas data
+  	"produto"
+  	"quantidade"
+	"categoria_despesa_id" -> opcional, caso nao possua categoria
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+DELETE "/despesa/:id" -> deleta uma despesa pelo ID
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+GET "/despesa/:quantidade/:pagina" -> paginacao. Pegar QUANTIDADE itens começando do item PAGINA*QUANTIDADE (obs: pagina deve comecar em 0)
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+			{
+				"id":
+				"nome":
+				"descricao":
+				"valor":
+				"data":
+				"produto":
+				"quantidade":
+			}
+		]
+
+ --- > CATEGORIA RECEITA < ---
+ POST "/categoria/receita" -> adiciona uma categoria de receita
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome":
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+GET "/categoria/receita" -> pega os dados de todas as categorias pertencentes ao cliente ou a nenhum cliente(as padroes iniciais)
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+		"categoria_receita_id"
+		"nome":
+	]
+
+
+GET "/categoria/receita/:id" -> pega os dados de uma categoria em especifico
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+		"categoria_receita_id"
+		"nome":
+	}
+
+
+PUT "/categoria/receita/:id" -> atualiza os dados de uma categoria
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+DELETE "/categoria/receita/:id" -> deleta uma categoria
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+ --- > CATEGORIA DESPESA < ---
+POST "/categoria/despesa" -> adiciona uma categoria de despesa
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome":
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+GET "/categoria/despesa" -> pega os dados de todas as categorias de despesa pertencentes ao cliente ou a nenhum cliente(as padroes iniciais)
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+		"categoria_despesa_id"
+		"nome":
+	]
+
+
+GET "/categoria/despesa/:id" -> pega os dados de uma categoria em especifico
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+		"categoria_despesa_id"
+		"nome":
+	}
+
+
+PUT "/categoria/despesa/:id" -> atualiza os dados de uma categoria
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+DELETE "/categoria/despesa/:id" -> deleta uma categoria
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+
+	--- > PRODUTO < ---
+POST "/produto" -> Cadastra um produto
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+  	"condicaoProduto"
+	"codigoReferencia"
+	"marcaProduto"
+	"estoqueMinimo"
+	"estoqueMaximo"
+	"estoqueAtual"
+  	"preco"
+	"categoria_produto_id" -> opcional, pode ser vazio
+
+	RETORNO
+	status:
+	message:
+	data: {} (vazio)
+
+GET "/produto" ->recebe todos os produtos daquele usuario
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+			{
+				"id":
+  				"nome"
+  				"condicaoProduto"
+				"codigoReferencia"
+				"marcaProduto"
+				"estoqueMinimo"
+				"estoqueMaximo"
+				"estoqueAtual"
+  				"preco"
+			}
+		]
+
+GET "/produto/:id" -> recebe os dados de um produto
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+				"id":
+  				"nome"
+  				"condicaoProduto"
+				"codigoReferencia"
+				"marcaProduto"
+				"estoqueMinimo"
+				"estoqueMaximo"
+				"estoqueAtual"
+  				"preco"
+		}
+
+PUT "/produto/:id" -> atualiza os dados de um produto
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+  	"condicaoProduto"
+	"codigoReferencia"
+	"marcaProduto"
+	"estoqueMinimo"
+	"estoqueMaximo"
+	"estoqueAtual"
+  	"preco"
+	"categoria_produto_id" -> opcional, pode ser vazio
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+DELETE "/produto/:id" -> deleta um produto pelo ID
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+	--- > CATEGORIA PRODUTO < ---
+POST "/categoria/produto" -> adiciona uma categoria de produto
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome":
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+GET "/categoria/produto" -> pega os dados de todas as categorias de produtos pertencentes ao cliente ou a nenhum cliente(as padroes iniciais)
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+		"categoria_produto_id"
+		"nome":
+	]
+
+
+GET "/categoria/produto/:id" -> pega os dados de um produto em especifico
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+		"categoria_produto_id"
+		"nome":
+	}
+
+
+PUT "/categoria/produto/:id" -> atualiza os dados de uma categoria
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"nome"
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+DELETE "/categoria/produto/:id" -> deleta uma categoria
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+	--- > ESTOQUE < ---
+POST "/estoque" -> Cria um estoque
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"data"
+  	"quantidade"
+	"precoProduto"
+	"tipo"
+	"anexo"
+
+	RETORNO
+	status:
+	message:
+	data: {} (vazio)
+
+GET "/estoque" ->recebe todos os estoques daquele usuario
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:[
+			{
+				"id":
+  				"data"
+  				"quantidade"
+				"precoProduto"
+				"tipo"
+				"anexo"
+			}
+		]
+
+GET "/estoque/:id" -> recebe os dados de um produto
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{
+				"id":
+  				"data"
+  				"quantidade"
+				"precoProduto"
+				"tipo"
+				"anexo"
+		}
+
+PUT "/estoque/:id" -> atualiza os dados de um estoque
+	CABEÇALHO
+	"Token"
+	CORPO
+  	"data"
+  	"quantidade"
+	"precoProduto"
+	"tipo"
+	"anexo"
+
+	RETORNO
+	status:
+	message
+	data:{}
+
+
+DELETE "/estoque/:id" -> deleta um estoque pelo ID
+	CABEÇALHO
+	"Token"
+	CORPO
+  	{}
+
+	RETORNO
+	status:
+	message
+	data:{}
+
